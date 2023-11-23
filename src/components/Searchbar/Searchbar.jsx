@@ -8,13 +8,12 @@ export default class Searchbar extends Component {
   };
 
   handelChangeName = e => {
-    console.log(e.currentTarget.value);
     this.setState({ userSearch: e.currentTarget.value.toLowerCase() });
   };
   handelSubmit = e => {
     e.preventDefault();
     if (this.state.userSearch.trim() === '') {
-      toast.error('Error ');
+      toast.error('Try more time ');
       return;
     }
     this.props.onSubmit(this.state.userSearch);
@@ -25,7 +24,7 @@ export default class Searchbar extends Component {
       <header>
         <FormStyle onSubmit={this.handelSubmit} className="form">
           <FormButton type="submit">
-            <span className="button-label"></span>
+            <span></span>
           </FormButton>
 
           <Input

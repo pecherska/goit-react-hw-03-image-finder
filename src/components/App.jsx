@@ -7,7 +7,7 @@ import Modal from './Modal/Modal';
 import { getImages } from 'api/ImageApi';
 import Loader from './Loader/Loader';
 import Button from './Button/Button';
-import { ImgModal } from './App.styled';
+import { ImgModal, LoderContainer } from './App.styled';
 
 export class App extends Component {
   state = {
@@ -64,8 +64,6 @@ export class App extends Component {
       if (this.state.page === totalPage) {
         this.setState({ showLoadMore: false });
       }
-
-      console.log(data);
     } catch (error) {
       this.setState({
         error: error.response.data,
@@ -75,7 +73,7 @@ export class App extends Component {
   };
 
   handelSubmit = userSearch => {
-    this.setState({ userSearch });
+    this.setState({ userSearch, page: 1 });
   };
 
   handleClick = () => {
@@ -113,11 +111,11 @@ export class App extends Component {
         {this.state.error && toast.error(this.state.error)}
 
         <Searchbar onSubmit={this.handelSubmit}></Searchbar>
-        {this.state.isLoading && <Loader />}
 
         {this.state.images && (
           <ImageGallery images={this.state.images} onClick={this.openModal} />
         )}
+        <LoderContainer>{this.state.isLoading && <Loader />}</LoderContainer>
         {this.state.showLoadMore && (
           <Button handleClick={this.handleClick}></Button>
         )}

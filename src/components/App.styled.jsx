@@ -7,9 +7,7 @@ export const ImgModal = styled.img`
   height: 100%;
 `;
 
-export const Container = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 16px;
-  padding-bottom: 24px;
+export const LoderContainer = styled.div`
+  margin-left: 50%;
+  margin-right: 50%;
 `;
