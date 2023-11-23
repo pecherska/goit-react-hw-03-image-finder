@@ -1,14 +1,16 @@
-import { Blocks } from 'react-loader-spinner';
+import { MagnifyingGlass } from 'react-loader-spinner';
 
 const Loader = ({ isLoading }) => {
   return (
-    <Blocks
+    <MagnifyingGlass
       visible={isLoading}
       height="80"
       width="80"
-      ariaLabel="blocks-loading"
+      ariaLabel="MagnifyingGlass-loading"
       wrapperStyle={{}}
-      wrapperClass="blocks-wrapper"
+      wrapperClass="MagnifyingGlass-wrapper"
+      glassColor="#c0efff"
+      color="#e15b64"
     />
   );
 };

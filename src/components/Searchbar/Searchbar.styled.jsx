@@ -1,6 +1,18 @@
 import styled from 'styled-components';
+import { Form, Field } from 'formik';
 
-export const FormStyle = styled.form`
+// export const FormStyle = styled.form`
+//   display: flex;
+//   justify-content: center;
+//   width: 100%;
+//   padding: 10px 0px 10px 0px;
+//   position: sticky;
+//   top: 0px;
+
+//   background-color: rgb(94, 83, 180);
+// `;
+
+export const FormikForm = styled(Form)`
   display: flex;
   justify-content: center;
   width: 100%;
@@ -26,7 +38,18 @@ export const FormButton = styled.button`
   outline: none;
 `;
 
-export const Input = styled.input`
+// export const Input = styled.input`
+//   display: inline-block;
+//   width: 50%;
+//   font: inherit;
+//   font-size: 20px;
+//   border: none;
+//   outline: none;
+//   padding-left: 4px;
+//   padding-right: 4px;
+// `;
+
+export const FormikInput = styled(Field)`
   display: inline-block;
   width: 50%;
   font: inherit;

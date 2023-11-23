@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { toast } from 'react-toastify';
-import { FormStyle, FormButton, Input } from './Searchbar.styled';
+import { FormikForm, FormikInput, FormButton } from './Searchbar.styled';
+import { Formik } from 'formik';
 
 export default class Searchbar extends Component {
   state = {
@@ -22,10 +23,22 @@ export default class Searchbar extends Component {
   render() {
     return (
       <header>
-        <FormStyle onSubmit={this.handelSubmit} className="form">
-          <FormButton type="submit">
-            <span></span>
-          </FormButton>
+        <Formik>
+          <FormikForm onSubmit={this.handelSubmit} className="form">
+            <FormButton type="submit"></FormButton>
+
+            <FormikInput
+              value={this.state.userSearch}
+              onChange={this.handelChangeName}
+              type="text"
+              autoComplete="off"
+              autoFocus
+              placeholder="Search images and photos"
+            />
+          </FormikForm>
+        </Formik>
+        {/* <FormStyle onSubmit={this.handelSubmit} className="form">
+          <FormButton type="submit"></FormButton>
 
           <Input
             value={this.state.userSearch}
@@ -36,7 +49,7 @@ export default class Searchbar extends Component {
             autoFocus
             placeholder="Search images and photos"
           />
-        </FormStyle>
+        </FormStyle> */}
       </header>
     );
   }
