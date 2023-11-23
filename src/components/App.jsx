@@ -33,12 +33,6 @@ export class App extends Component {
       }
       this.handelImages();
     }
-
-    console.log(prevProps);
-    console.log(prevState);
-    console.log(this.state.userSearch);
-    console.log(this.state.page);
-    console.log(prevState.page);
   }
 
   handelImages = async () => {
@@ -82,7 +76,6 @@ export class App extends Component {
 
   handelSubmit = userSearch => {
     this.setState({ userSearch });
-    console.log(userSearch);
   };
 
   handleClick = () => {
@@ -98,8 +91,7 @@ export class App extends Component {
       showModal: true,
       contentModal,
     });
-    console.log(this.state);
-    console.log(contentModal);
+
     const searchImage = this.state.images.find(
       image => image.id === contentModal
     );
